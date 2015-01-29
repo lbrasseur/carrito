@@ -12,7 +12,7 @@ public class User {
 	private int userId;
 	private String userMail;
 	private String userPassword;
-	private String uerName;
+	private String userName;
 	private int userCartId;
 	
 	public String getUserMail() {
@@ -27,11 +27,11 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public String getUerName() {
-		return uerName;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUerName(String uerName) {
-		this.uerName = uerName;
+	public void setUserName(String uerName) {
+		this.userName = uerName;
 	}
 	public int getUserCartId() {
 		return userCartId;
