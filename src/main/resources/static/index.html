@@ -108,7 +108,7 @@
 			$('#userList').empty();
 			get('service/user', function(data) {
 				for (userPos in data.results) {
-					product = data.results[userPos];
+					user = data.results[userPos];
 					var row = $("<li>");
 					row.append(user.userName + " - " + user.userMail + " - " + user.userPassword);
 					row.append("&nbsp;");
