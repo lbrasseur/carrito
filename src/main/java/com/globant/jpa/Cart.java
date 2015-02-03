@@ -42,7 +42,7 @@ public class Cart {
 	public Cart() {
 	}
 
-	public Cart(Items initialItems) {
+	public Cart(Items... initialItems) {
 		items = new HashSet<Items>();
 		for (Items item : initialItems) {
 			addItem(item);
