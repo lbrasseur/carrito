@@ -1,40 +1,52 @@
 package com.globant.carrito.user;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.globant.jpa.Cart;
+
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue
+	private int userId;
+	
+	@Column
 	private String userMail;
+	
+	@Column
 	private String userPassword;
+	
+	@Column
 	private String userName;
 	
-	public User(String mail, String pass, String name){
-		this.setUserMail(mail);
-		this.setUserPassword(pass);
-		this.setUserName(name);
-	}
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "User")
+	private Set<Cart> carrito;
+	
 	public String getUserMail() {
 		return userMail;
 	}
-
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
-
 	public String getUserPassword() {
 		return userPassword;
 	}
-
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-
 	public String getUserName() {
 		return userName;
 	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String uerName) {
+		this.userName = uerName;
 	}
 	
-
 }
