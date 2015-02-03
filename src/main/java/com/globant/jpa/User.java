@@ -1,7 +1,12 @@
 package com.globant.jpa;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -9,11 +14,14 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
+	@GeneratedValue
 	private int userId;
 	private String userMail;
 	private String userPassword;
 	private String userName;
-	private int userCartId;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "User")
+	private Set<Cart> carrito;
 	
 	public String getUserMail() {
 		return userMail;
@@ -32,12 +40,6 @@ public class User {
 	}
 	public void setUserName(String uerName) {
 		this.userName = uerName;
-	}
-	public int getUserCartId() {
-		return userCartId;
-	}
-	public void setUserCartId(int userCartId) {
-		this.userCartId = userCartId;
 	}
 	
 }

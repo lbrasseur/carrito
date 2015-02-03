@@ -7,11 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.*;
-
-import java.security.Principal;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.http.HttpStatus;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.globant.carrito.StatusDto;
 
@@ -20,18 +18,12 @@ public class SecurityService {
 
 	@RequestMapping(value = "/service/login", method=RequestMethod.POST)
 	@ResponseBody
-	public String getData(Postdata postdata, @Context HttpServletRequest request) {
+	public String getData(HttpServletRequest request) {
 	  HttpSession session = request.getSession();
+	  return null;
 	}
 	
-    @RequestMapping(value="/",produces = "application/json")
-    public Map<String,String> helloUser(Principal principal) {
-        HashMap<String,String> result = new HashMap<String,String>();
-        result.put("username", principal.getName());
-        return result;
-    }
-
-    @RequestMapping("/logout")
+    @RequestMapping("/service/logout")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void logout(HttpSession session) {
         session.invalidate();
