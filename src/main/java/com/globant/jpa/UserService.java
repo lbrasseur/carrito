@@ -17,6 +17,7 @@ public class UserService {
 		emu.setUserMail(mail);
 		emu.setUserPassword(pass);
 		emu.setUserName(name);
+		em.persist(emu);
 		em.close();
 		return emu;
 	}
@@ -27,6 +28,7 @@ public class UserService {
 		if (emu != null) {
 			em.remove(emu);
 	  }
+		em.persist(emu);
 		em.close();
 	}
 
