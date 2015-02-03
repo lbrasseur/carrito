@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,9 +27,16 @@ public class Cart {
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "Cart")
 	private Set<Items> items;
 	
+	@Column
 	private double finalPrice;
+	
+	@Column
 	private int finalQuantity;
+	
+	@Column
 	private boolean isEmpty;
+	
+	@Column
 	private boolean checkOut;
 	
 	public Cart() {

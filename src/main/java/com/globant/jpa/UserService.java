@@ -1,14 +1,16 @@
 package com.globant.jpa;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 public class UserService {
 	
-	protected EntityManager em;
+	  protected EntityManager em;
 
-	public UserService(EntityManager em) {
-		this.em = em;
-	}
+	  public UserService(EntityManagerFactory emf) {
+		  EntityManager em = emf.createEntityManager();
+		  this.em = em;
+	  }
 	
 	public User createUser(String mail, String pass, String name){
 		User emu = new User();
@@ -26,6 +28,8 @@ public class UserService {
 	}
 
 	public User findUser(String mail) {
-	  return em.find(User.class, mail);
+	  User u = em.find(User.class, mail);
+	  em.close();
+	  return u;
 	}
 }

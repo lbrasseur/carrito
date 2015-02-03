@@ -1,6 +1,7 @@
 package com.globant.jpa;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,8 +23,14 @@ public class Items {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private int categoriesId;
+	
+	@Column
 	private String itemDescription;
+	
+	@Column
 	private int itemQuantity;
+	
+	@Column
 	private double itemPrice;
 	
 	public String getItemDescription() {
