@@ -7,6 +7,8 @@ import javax.persistence.Persistence;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.globant.jpa.UserService;
+
 @SpringBootApplication
 public class CarritoApplication {
 
@@ -15,6 +17,6 @@ public class CarritoApplication {
     public static void main(String[] args) {
         SpringApplication.run(CarritoApplication.class, args);
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("UserService");
-        UserService(emf);
+        UserService userservice = new UserService(emf);
     }
 }
