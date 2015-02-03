@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.globant.carrito.product.Items;
+
 @Entity
 public class Cart {
 

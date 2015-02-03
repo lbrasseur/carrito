@@ -1,4 +1,4 @@
-package com.globant.jpa;
+package com.globant.carrito.product;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package com.globant.jpa;
+package com.globant.carrito.product;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.globant.jpa.Cart;
 
 
 @Entity
