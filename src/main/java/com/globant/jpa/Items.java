@@ -57,4 +57,7 @@ public class Items {
 	public void setItemPrice(double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
+	public void setCart(Cart cart) {
+		this.carrito = cart;
+	}
 }

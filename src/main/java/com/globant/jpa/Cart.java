@@ -45,13 +45,13 @@ public class Cart {
 	public Cart(Items initialItems) {
 		items = new HashSet<Items>();
 		for (Items item : initialItems) {
-			addItems(item);
+			addItem(item);
 		}
 	}
 
 	public void addItem(Items item) {
 		items.add(item);
-		// Esto es necesario para que cargue la "clave foranea"
+		/* Esto es necesario para que cargue la "clave foranea" */
 		item.setCart(this);
 	}
 	
