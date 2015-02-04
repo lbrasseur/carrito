@@ -2,6 +2,7 @@ package com.globant.carrito.user;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,5 +50,22 @@ public class UserService {
 	  User u = em.find(User.class, mail);
 	  em.close();
 	  return u;
+	}
+	
+	public String getUserMail(String mail) {		
+		EntityManager em = emf.createEntityManager();
+		TypedQuery<User> query = em.createQuery("from User where userMail = :mail", User.class);
+		query.setParameter("mail", mail);
+		query.getSingleResult();
+		em.close();
+		return getUserMail(mail);
+	}
+	public String getPassword(String pass) {
+		EntityManager em = emf.createEntityManager();
+		TypedQuery<User> query = em.createQuery("from User where userPassword = :pass", User.class);
+		query.setParameter("pass", pass);
+		query.getSingleResult();
+		em.close();
+		return getPassword(pass);
 	}
 }

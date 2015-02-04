@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.globant.jpa.Cart;
+import com.globant.carrito.product.Cart;
 
 @Entity
 public class User {

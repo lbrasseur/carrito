@@ -15,8 +15,12 @@ public class CarritoApplication {
 	protected EntityManager em;
 
     public static void main(String[] args) {
-        SpringApplication.run(CarritoApplication.class, args);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("UserService");
-        UserService userservice = new UserService(emf);
+        
+    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("UserService");
+    	UserService userservice = new UserService(emf);
+    	
+    	SpringApplication.run(CarritoApplication.class, args);
+        
+        
     }
 }

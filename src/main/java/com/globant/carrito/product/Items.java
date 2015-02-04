@@ -7,13 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import com.globant.jpa.Cart;
-
 
 @Entity
-@Table(name="Items")
 public class Items {
 
 	@Id
@@ -35,6 +30,21 @@ public class Items {
 	@Column
 	private double itemPrice;
 	
+	public Items() {
+	}
+
+	public Items(String itemDescription, Double itemPrice) {
+		this.itemDescription = itemDescription;
+		this.itemPrice = itemPrice;
+	}
+	
+	public void setCart(Cart cart) {
+		this.carrito = cart;
+	}
+	
+	public int getItemId() {
+		return itemId;
+	}
 	public String getItemDescription() {
 		return itemDescription;
 	}
@@ -59,7 +69,5 @@ public class Items {
 	public void setItemPrice(double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
-	public void setCart(Cart cart) {
-		this.carrito = cart;
-	}
+
 }

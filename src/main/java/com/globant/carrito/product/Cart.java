@@ -1,5 +1,4 @@
-package com.globant.jpa;
-
+package com.globant.carrito.product;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-import com.globant.carrito.product.Items;
 
 @Entity
 public class Cart {
@@ -51,15 +48,14 @@ public class Cart {
 
 	public void addItem(Items item) {
 		items.add(item);
-		/* Esto es necesario para que cargue la "clave foranea" */
 		item.setCart(this);
 	}
 	
+	public Set<Items> getItems() {
+		return items;
+	}
 	public int getUserId() {
 		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 	
 	public double getFinalPrice() {
